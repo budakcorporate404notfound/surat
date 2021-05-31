@@ -1,0 +1,34 @@
+{
+  "name": "shibuyakosuke/laravel-crud-breadcrumbs",
+  "description": "Breadcrumbs for Laravel project",
+  "keywords": [
+    "laravel",
+    "breadcrumbs"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ShibuyaKosuke",
+      "email": "shibuya@imagenious.co.jp"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ShibuyaKosuke\\LaravelCrudBreadcrumbs\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ShibuyaKosuke\\LaravelCrudBreadcrumbs\\Providers\\BreadcrumbsServiceProvider"
+      ],
+      "aliases": {
+        "Breadcrumbs": "ShibuyaKosuke\\LaravelCrudBreadcrumbs\\Facades\\Breadcrumbs"
+      }
+    }
+  },
+  "require": {
+
+  }
+}

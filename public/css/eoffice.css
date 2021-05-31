@@ -1,0 +1,107 @@
+.process-time {
+    font-size: 60%;
+}
+
+.step {
+    list-style: none;
+    margin: 0.2rem 0;
+    width: 100%;
+    padding-left: 0px;
+}
+
+.step .step-item {
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+    margin-top: 0;
+    min-height: 1rem;
+    position: relative;
+    text-align: center;
+}
+
+.step .step-item:not(:first-child)::before {
+    background: #0069d9;
+    content: "";
+    height: 2px;
+    left: -50%;
+    position: absolute;
+    top: 9px;
+    width: 100%;
+}
+
+.step .step-item a {
+    color: #acb3c2;
+    display: inline-block;
+    padding: 20px 10px 0;
+    text-decoration: none;
+}
+
+.step .step-item a::before {
+    background: #0069d9;
+    border: 0.1rem solid #fff;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 0.9rem;
+    left: 50%;
+    position: absolute;
+    top: 0.2rem;
+    transform: translateX(-50%);
+    width: 0.9rem;
+    z-index: 1;
+}
+
+.step .step-item.active a::before {
+    background: #fff;
+    border: 0.1rem solid #0069d9;
+}
+
+.step .step-item.active ~ .step-item::before {
+    background: #e7e9ed;
+}
+
+.step .step-item.active ~ .step-item a::before {
+    background: #e7e9ed;
+}
+
+table.hover-pointer tbody tr:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+table.hover-pointer tbody tr:hover > .sorting_1 {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.border-div {
+    border: 1px solid #007bff;
+}
+
+.form-group.required .control-label:after,
+.form-group.required label:after {
+    /* , input[required] + label:after, input[required]:after */
+    content: "*";
+    color: red;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.8) url("../img/loader.gif") center
+        no-repeat;
+}
+
+/* Turn off scrollbar when body element has the loading class */
+body.loading {
+    overflow: hidden;
+}
+
+/* Make spinner image visible when body element has the loading class */
+body.loading .overlay {
+    display: block;
+}
