@@ -72,7 +72,10 @@ Route::post('/surat/suratMasukUpload', 'Surat\SuratMasukController@proses_upload
 // });
 // Route::get('/login', 'HomeController@login')->name('login');
 // Route::post('login', 'Auth\LoginController@login');
-// Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+//Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+// Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+// Route::get('/keluar', 'Auth\LoginController@keluar')->name('keluar');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 // Route::group(['middleware' => ['auth', 'user.management'], 'prefix' => 'usermanagement'], function () {
 
@@ -105,16 +108,21 @@ Route::get('qrcode', function () {
     return QrCode::size(250)
         ->backgroundColor(255, 255, 204)
         ->generate('MyNotePaper');
-
 });
 
 
 Route::get('surat/cetak_pdf', 'Surat\SuratMasukController@cetakPdf');
 Route::get('surat/mailbox_read', 'Surat\SuratMasukController@setMailboxRead')->name('suratmasuk.setmailboxread');
 
+Route::get('surat/changepassword', 'ChangePasswordController@index');
+Route::post('surat/changepassword', 'ChangePasswordController@store')->name('change.password');
+
 Route::get('surat/email', 'Surat\EmailController@sendDisposisiStatus');
 
 // Route::resource('surat/dashboard', Surat\DashboardController::class)->shallow();
+
+
+
 
 
 Route::resource('surat/surat_masuk', Surat\SuratMasukController::class)->shallow();

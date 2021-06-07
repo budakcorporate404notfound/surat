@@ -317,6 +317,8 @@ $(function () {
         '<i class="far fa-envelope"></i> <span class="badge badge-pill badge-primary">INBOX</span> / Daftar surat masuk',
         '<i class="far fa-thumbs-up"></i> <span class="badge badge-pill badge-danger">PROCESSED</span> / Daftar surat selesai diproses',
         '<i class="far fa-check-circle"></i> <span class="badge badge-pill badge-warning">SIGNED</span> / Daftar surat telah ditandatangani',
+
+
     ];
 
     statusMailbox = 3;

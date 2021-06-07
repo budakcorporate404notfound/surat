@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
-class RouteServiceProvider extends ServiceProvider
+class RouteServiceProviderRegister extends ServiceProvider
 {
     protected $namespace = 'App\Http\Controllers';
 
@@ -19,9 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-
-    public const HOME = '/surat/surat_masuk';
-
+    public const HOME = '/login';
 
     /**
      * The controller namespace for the application.

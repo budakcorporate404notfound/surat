@@ -93,8 +93,9 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
+                    <a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
+                             {{-- <a href="{{route('logout')}}"> --}}
                         <p>
                             <i class="nav-icon fas fa-power-off"></i>
                             Logout
@@ -112,7 +113,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <span class="brand-text font-weight-light">e-Persuratan</span>
+                <span class="brand-text font-weight-light">Persuratan Rokap</span>
             </a>
 
             <!-- Sidebar -->
@@ -120,6 +121,7 @@
 
             @endcomponent
             <!-- /.sidebar -->
+
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
