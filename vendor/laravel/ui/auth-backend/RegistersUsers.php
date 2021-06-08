@@ -6,6 +6,8 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Surat\ArahanSurat;
+use App\Models\Surat\Jabatan;
 
 trait RegistersUsers
 {
@@ -18,7 +20,15 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+
+        $items = ArahanSurat::pluck('arahan_surat', 'id');
+        $items2 = Jabatan::pluck('jabatan', 'id');
+
+        $selectedID = 0;
+
+        // return dd($items);
+        return view('auth.register', compact('items2', 'items', 'selectedID'));
+        // return view('auth.register');
     }
 
     /**

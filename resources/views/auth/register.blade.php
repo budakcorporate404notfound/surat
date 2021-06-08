@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="login-logo">
-    <a href="{{ url('/') }}"><b>Laravel</b>Admin</a>
+    <a href="{{ url('/') }}"><b>Persuratan </b>Rokap</a>
 </div>
 <!-- /.login-logo -->
 <div class="card">
     <div class="card-body login-card-body">
-        <p class="login-box-msg">Create a new account</p>
+        <p class="login-box-msg">Buat Akun Baru</p>
 
         <form action="{{ route('register') }}" method="post">
             @csrf
@@ -58,6 +58,32 @@
             </div>
 
             <div class="input-group mb-3">
+                <select class="form-control" name="id_unit_kerja">
+
+                    <option>Pilih Unit Kerja</option>
+
+                    @foreach ($items as $key => $value)
+                    <option value="{{ $key }}" {{ ( $key == $selectedID) ? 'selected' : '' }}>
+                        {{ $value }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <select class="form-control" name="id_jabatan">
+
+                    <option>Pilih Jabatan</option>
+
+                    @foreach ($items2 as $key => $value)
+                    <option value="{{ $key }}" {{ ( $key == $selectedID) ? 'selected' : '' }}>
+                        {{ $value }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
                 <input id="password" type="password" placeholder="password"
                     class="form-control @error('password') is-invalid @enderror" name="password" required
                     autocomplete="current-password">
@@ -83,21 +109,13 @@
                 </div>
             </div>
 
-            <select class="form-control" name="product_id">
-                <option>Select Item</option>
-                @foreach ($items as $key => $value)
-                <option value="{{ $key }}" {{ ( $key == $selectedID) ? 'selected' : '' }}>
-                    {{ $value }}
-                </option>
-                @endforeach
-            </select>
-
             <div class="input-group mb-3">
-                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                <button type="submit" class="btn btn-primary btn-block">Simpan Akun</button>
             </div>
         </form>
+
         <p class="mb-0">
-            <a href="{{route('login')}}" class="text-center">Already have an account?</a>
+            <a href="{{route('login')}}" class="text-center">Sudah Mempunyai Akun</a>
         </p>
     </div>
     <!-- /.Register-card-body -->

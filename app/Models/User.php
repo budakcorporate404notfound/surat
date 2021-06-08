@@ -21,7 +21,9 @@ class User extends Authenticatable
         'email',
         'password',
         'telegram_id',
-        'nip'
+        'nip',
+        'id_unit_kerja',
+        'id_jabatan'
     ];
 
     /**

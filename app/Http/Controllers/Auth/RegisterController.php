@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -54,7 +55,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'nip' => ['required', 'string', 'max:255']
+            'nip' => ['required', 'string', 'max:255'],
+            'id_unit_kerja' => ['required'],
+            'id_jabatan' => ['nullable']
         ]);
     }
 
@@ -70,18 +73,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'nip' => $data['nip']
+            'nip' => $data['nip'],
+            'id_unit_kerja' => $data['id_unit_kerja'],
+            'id_jabatan' => $data['id_jabatan']
         ]);
-    }
-
-    public function dropDownShow(Request $request)
-
-    {
-
-        $items = Item::pluck('name', 'id');
-
-        $selectedID = 2;
-
-        return view('auth.register', compact('id', 'items'));
     }
 }

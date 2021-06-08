@@ -18,6 +18,10 @@ use App\Http\Controllers\SendemailController;
 // Route::resource('surat/retrieve-mail', Surat\RetrievemailController::class);
 // Route::get('/retrieve', 'RetrievemailController@index')->name('retrieveemail');
 
+//Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Route::get('/registers', [App\Http\Controllers\Controller::class, 'Registers'])->name('Registers');
+
 Route::get('/', function () {
     return view('welcome');
 });

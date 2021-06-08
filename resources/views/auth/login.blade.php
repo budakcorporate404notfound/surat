@@ -7,7 +7,7 @@
 <!-- /.login-logo -->
 <div class="card">
     <div class="card-body login-card-body">
-        <p class="login-box-msg">silakan masukan nip dan password</p>
+        <p class="login-box-msg">masukan email / nip dan password</p>
 
         <form action="{{ route('login') }}" method="post">
             @csrf
@@ -20,7 +20,7 @@
             @endif
 
             <div class="input-group mb-3">
-                <input id="username" type="username" placeholder="masukan nip anda"
+                <input id="username" type="username" placeholder="masukan email / nip anda"
                     class="form-control @error('username') is-invalid @enderror" name="username"
                     value="{{ old('username') }}" required autocomplete="username" autofocus>
                 <div class="input-group-append">
