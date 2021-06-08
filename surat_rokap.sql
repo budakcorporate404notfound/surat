@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2021 at 08:15 AM
+-- Generation Time: Jun 08, 2021 at 07:20 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -5506,6 +5506,28 @@ INSERT INTO `tref_asal_ekspedisi_surat_masuk` (`id`, `asal_ekspedisi_surat_masuk
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tref_jabatan`
+--
+
+CREATE TABLE `tref_jabatan` (
+  `id` int(11) DEFAULT NULL,
+  `jabatan` varchar(255) NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tref_jabatan`
+--
+
+INSERT INTO `tref_jabatan` (`id`, `jabatan`, `deleted_at`) VALUES
+(1, 'kepala biro', NULL),
+(2, 'kepala bagian', NULL),
+(3, 'kepala sub bagian', NULL),
+(NULL, 'staff', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tref_jenis_disposisi`
 --
 
@@ -5797,7 +5819,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (10, 'Yus Natin, S.Sos, MM', 'yusnatinn@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '196306301983032001', 'Kasubbagian Pelaporan Biro Perencanaan dan Organisasi', '085770920235', 21, 3, NULL, NULL),
 (11, 'Syaiful Arif, SH.,M.Si', 'syaiful.poros@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '196603101987031001', 'Kasubbagian Bimbingan dan Monitoring Penganggaran Biro Perencanaan dan Organisasi', '085214750481', 15, 3, NULL, NULL),
 (12, 'Teguh Magzan, SH', 'magzant@yahoo.co.id', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '197508042003121001', 'Kasubbagian Rencana Program I Biro Perencanaan dan Organisasi', '082213707775', 9, 3, NULL, NULL),
-(13, 'Titi suprapti', 'titisuprapti125@gmail.com', NULL, '$2y$10$7V6YZPq.YNUXGbhYUTTj/u.QRv0hdyGH50d4b6sqCRLQDJlIViF6.', 'htQtRI7gNb95Qsv3p3LbF5lFFa97r2vAT3lu2EnQM1Xa9qVSaAtzJ8reZqGd', '196805121989032002', 'Kasubbagian Tata Usaha Biro Perencanaan dan Organisasi', '081281999714', 1, 3, NULL, '2021-06-02 10:37:02'),
+(13, 'Titi suprapti', 'titisuprapti125@gmail.com', NULL, '$2y$10$7V6YZPq.YNUXGbhYUTTj/u.QRv0hdyGH50d4b6sqCRLQDJlIViF6.', '8lyeT4DqRbR1sOnuOBikjiePkpEoTrQIG5ZtFSKHTSPyIQv7kNt40omB7hVk', '196805121989032002', 'Kasubbagian Tata Usaha Biro Perencanaan dan Organisasi', '081281999714', 1, 3, NULL, '2021-06-02 10:37:02'),
 (14, 'Emie Yuliati, SE, ME', 'emieyuliati@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '197405062006042001', 'Kasubbagian Bimbingan dan Monitoring Penyelenggaraan Program Biro Perencanaan dan Organisasi', '08118603902', 14, 3, NULL, NULL),
 (15, 'Retno Widuri, S.Kom, MH', 'rtnwiduri@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '197710122005022001', 'Kasubbagian Organisasi Biro Perencanaan dan Organisasi', '081218768730', 17, 3, NULL, NULL),
 (16, 'Diana Puri Syawaliah,  SE.Par', 'honeydee6@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '198212022008012009', 'Kasubbagian Rencana Anggaran II Biro Perencanaan dan Organisasi', '081296929736', 13, 3, NULL, NULL),
@@ -5855,7 +5877,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (82, 'kubin', 'kubin@gmail.com', NULL, '$2y$10$ypBAYFmv7xV0CwpeTdHQsO.5lkRVsegE6luR4WHyoIULVPvpI6KN2', NULL, '1234', NULL, NULL, NULL, NULL, '2021-06-06 23:21:25', '2021-06-06 23:21:25'),
 (83, 'sam', 'sam@gmail.com', NULL, '$2y$10$9JR3hWkefvKSdbMBBYD09O46FMfpocmo6QfHWYCGIHKTKqnKNcwm.', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:22:41', '2021-06-06 23:22:41'),
 (84, 'amanah', 'amanah@gmail.com', NULL, '$2y$10$TIaVamTd2c.1sdvoPpxDle2eIPFUpsK9R6PH0GmKths3T1.FcuuiO', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:23:36', '2021-06-06 23:23:36'),
-(85, 'qwerty', 'qwerty@gmail.com', NULL, '$2y$10$7M.BFm6fF4ywOcd8XTjZsON3Fs5x9q46HKpTelczssUay49DpYwcC', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:32:44', '2021-06-06 23:32:44');
+(85, 'qwerty', 'qwerty@gmail.com', NULL, '$2y$10$7M.BFm6fF4ywOcd8XTjZsON3Fs5x9q46HKpTelczssUay49DpYwcC', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:32:44', '2021-06-06 23:32:44'),
+(86, 'test123', 'test123@gmail.com', NULL, '$2y$10$in5EmHFVs4pzKpDSUGlyTO6QBnJ6zIDSQql7TvNmzCztmr1e0.x/y', NULL, '1100', NULL, NULL, NULL, NULL, '2021-06-07 22:26:33', '2021-06-07 22:26:33'),
+(87, '12345600', '12345600@gmail.com', NULL, '$2y$10$Bc83eiWyg1D1g5vIKUeI7.KRl9dezYzBeG0XXZ4eUbVhJmdwMrbIm', NULL, '12345600', NULL, NULL, 2, NULL, '2021-06-07 22:35:08', '2021-06-07 22:35:08'),
+(88, 'fidialdiano', 'fidialdiano@gmail.com', NULL, '$2y$10$LLBFKkqdwGEXkm5LNEq0ZOpmRCF9EFek5hA4eB/VkQjzzlwpOTakW', NULL, '12345678', NULL, NULL, 9, NULL, '2021-06-07 23:22:06', '2021-06-07 23:22:06'),
+(89, 'wemby', 'wemby@gmail.com', NULL, '$2y$10$dEHEDtxM7LNNoF0SYayw5OqgBOlcSRKrBJHolAOOe/VNhT4vRqcSC', NULL, '12345671234567', NULL, NULL, 2, 1, '2021-06-08 00:14:51', '2021-06-08 00:14:51'),
+(90, 'endah sri  mulyani gradini', 'esmgradini@gmail.com', NULL, '$2y$10$p9lS4z/cJuA04YySo4.AwejC9qjCK0INYfp3v.c2fF4lthBsC4r1q', NULL, '123', NULL, NULL, 3, NULL, '2021-06-08 00:17:33', '2021-06-08 00:17:33');
 
 -- --------------------------------------------------------
 
@@ -6445,7 +6472,7 @@ ALTER TABLE `tref_unit`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `users_asli`
