@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 07:20 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Jun 10, 2021 at 10:19 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -5477,7 +5476,8 @@ INSERT INTO `tref_arahan_surat` (`id`, `id_arahan_surat_parent`, `level_unit`, `
 (20, 7, 3, 'Kepala Sub. Bagian Standarisasi Dan Penilaian', NULL, NULL, NULL),
 (21, 7, 3, 'Kepala Sub. Bagian Stakap', NULL, NULL, NULL),
 (22, 3, 3, 'Kepala Sub. Bagian Statistik dan Pelaporan', NULL, NULL, NULL),
-(23, 7, 3, 'Kepala Sub. Bagian TU Biro Perlengkapan', NULL, NULL, NULL);
+(23, 7, 3, 'Kepala Sub. Bagian TU Biro Perlengkapan', NULL, NULL, NULL),
+(24, 6, 3, 'Kepala Sub. Bagian Analisa Kebutuhan Barang II', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -5819,7 +5819,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (10, 'Yus Natin, S.Sos, MM', 'yusnatinn@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '196306301983032001', 'Kasubbagian Pelaporan Biro Perencanaan dan Organisasi', '085770920235', 21, 3, NULL, NULL),
 (11, 'Syaiful Arif, SH.,M.Si', 'syaiful.poros@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '196603101987031001', 'Kasubbagian Bimbingan dan Monitoring Penganggaran Biro Perencanaan dan Organisasi', '085214750481', 15, 3, NULL, NULL),
 (12, 'Teguh Magzan, SH', 'magzant@yahoo.co.id', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '197508042003121001', 'Kasubbagian Rencana Program I Biro Perencanaan dan Organisasi', '082213707775', 9, 3, NULL, NULL),
-(13, 'Titi suprapti', 'titisuprapti125@gmail.com', NULL, '$2y$10$7V6YZPq.YNUXGbhYUTTj/u.QRv0hdyGH50d4b6sqCRLQDJlIViF6.', '8lyeT4DqRbR1sOnuOBikjiePkpEoTrQIG5ZtFSKHTSPyIQv7kNt40omB7hVk', '196805121989032002', 'Kasubbagian Tata Usaha Biro Perencanaan dan Organisasi', '081281999714', 1, 3, NULL, '2021-06-02 10:37:02'),
+(13, 'Titi suprapti', 'titisuprapti125@gmail.com', NULL, '$2y$10$7V6YZPq.YNUXGbhYUTTj/u.QRv0hdyGH50d4b6sqCRLQDJlIViF6.', 'M3Pj6DptPeANQdT4notw6HS6gAtdNWePiecvw6BBw1rHyRjIvKtSZU79xsjF', '196805121989032002', 'Kasubbagian Tata Usaha Biro Perencanaan dan Organisasi', '081281999714', 1, 3, NULL, '2021-06-02 10:37:02'),
 (14, 'Emie Yuliati, SE, ME', 'emieyuliati@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '197405062006042001', 'Kasubbagian Bimbingan dan Monitoring Penyelenggaraan Program Biro Perencanaan dan Organisasi', '08118603902', 14, 3, NULL, NULL),
 (15, 'Retno Widuri, S.Kom, MH', 'rtnwiduri@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '197710122005022001', 'Kasubbagian Organisasi Biro Perencanaan dan Organisasi', '081218768730', 17, 3, NULL, NULL),
 (16, 'Diana Puri Syawaliah,  SE.Par', 'honeydee6@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '198212022008012009', 'Kasubbagian Rencana Anggaran II Biro Perencanaan dan Organisasi', '081296929736', 13, 3, NULL, NULL),
@@ -5859,30 +5859,61 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (63, 'Hadi Saputro', 'hadi_s216@yahoo.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '', 'PPNPN Bagian Rencana dan Anggaran Biro Perencanaan dan Organisasi', '081398594449', NULL, NULL, NULL, NULL),
 (64, 'Wimbo Bramantyo', 'bramantyo.wimbo@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, '', 'PPNPN Bagian Rencana dan Program Biro Perencanaan dan Organisasi', '081333357830', 10, NULL, NULL, NULL),
 (65, 'Kasubag Analisis Renog', 'analisisrenog@gmail.com', NULL, '$2y$10$H5fK1R4EbYIZAaoa2ME6uOnYmbW3w5TuRg/qdtrXGLdeVrWKITt1S', NULL, NULL, 'Kasubbagian Analisis Biro Perencanaan dan Organisasi', NULL, 22, 3, NULL, NULL),
-(66, 'testimoni', 'testimoni@gmail.com', NULL, '$2y$10$oN5VBAsXAu2KQd1S/W2//etv0YZOnsJmUrGNzzsUbh6mldYF4cr.2', NULL, NULL, NULL, NULL, NULL, NULL, '2021-06-06 21:28:15', '2021-06-06 21:28:15'),
-(68, 'ngolo kante', 'ngolokante@gmail.com', NULL, '$2y$10$n/wRJni7H2xBXjmTSZTFWeaNM6vnBjGIoNV13/08DZtFTDg/Bgj.a', NULL, NULL, NULL, NULL, NULL, NULL, '2021-06-06 21:46:58', '2021-06-06 21:46:58'),
-(69, 'test', 'test@gmail.com', NULL, '$2y$10$INmjdiogNbtRYdPhWldcROt0ghFjRv.0cwDWSK4VxIiZK.QgaKOD2', NULL, NULL, NULL, NULL, NULL, NULL, '2021-06-06 21:49:29', '2021-06-06 21:49:29'),
-(70, 'hendro', 'hendro@gmail.com', NULL, '$2y$10$mlA87MZlswGwd6nskKXFNe9V.bY/OWrWyKu5AL3yABUwtdeZGzg4u', NULL, NULL, NULL, NULL, NULL, NULL, '2021-06-06 21:52:22', '2021-06-06 21:52:22'),
-(71, 'bismillah', 'bismillah@gmail.com', NULL, '$2y$10$jDR9WhJntf4f6wRMKOIrmu9mwvzxMlhhVmyXZ7Dna9ratM1RXhwwy', NULL, '1234567890', NULL, NULL, NULL, NULL, '2021-06-06 21:55:41', '2021-06-06 21:55:41'),
-(72, 'amandamanopo', 'amandamanopo@gmail.com', NULL, '$2y$10$WzQi9sMgom49vB9FWdZ6P.B09HPz8PRFUmncNdzLLsXKnnfVOkww.', NULL, '1234567890', NULL, NULL, NULL, NULL, '2021-06-06 22:01:50', '2021-06-06 22:01:50'),
-(73, 'leavethedooropen', 'leavethedooropen@gmail.com', NULL, '$2y$10$/.YjuaEy2tMlO3y9h9Y27OvvCrXA05V5eXL1k9LFTpHmwAP8DRJji', NULL, '1234567890', NULL, NULL, NULL, NULL, '2021-06-06 22:14:35', '2021-06-06 22:14:35'),
-(74, 'aditya', 'aditya@gmail.com', NULL, '$2y$10$ua9e6Okl8Nh2pEKEYME4oeCDIy9em6gpT5qOkUXgs6D16tAhfTfTu', NULL, '199401242019031003', NULL, NULL, NULL, NULL, '2021-06-06 22:46:29', '2021-06-06 22:46:29'),
-(75, 'abcd', 'abcd@gmail.com', NULL, '$2y$10$DCf0MBgAI2XxLzuy.zfnFOPOdh7hirlWoKThC.mggTMG2bKQJs5n2', NULL, '123', NULL, NULL, NULL, NULL, '2021-06-06 22:50:26', '2021-06-06 22:50:26'),
-(76, '1994', '1994@gmail.com', NULL, '$2y$10$ZyVNBzCcmwxbE/vAZlgNA.I7iluPghAA5t4ItlKt9CjLQ1C/Gi8i6', NULL, '123456', NULL, NULL, NULL, NULL, '2021-06-06 23:08:05', '2021-06-06 23:08:05'),
-(77, 'april', 'april@gmail.com', NULL, '$2y$10$1Wa.PYRFE68yIU7WAsRjHOQhh2PR5mlYzyrU2IkumFM0/aAOXPsPG', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:09:31', '2021-06-06 23:09:31'),
-(78, 'catet', 'catet@gmail.com', NULL, '$2y$10$x5J2aDT1p/c.Nqv.5NW5wuOuxgsRT0d5vnhEVbjZlcs59pO9zetmS', NULL, '1234', NULL, NULL, NULL, NULL, '2021-06-06 23:13:31', '2021-06-06 23:13:31'),
-(79, '404', '404@gmail.com', NULL, '$2y$10$AxXTVWVnUIjY5dH7c29kxu1GWPi96WJN2Yq.VCNBZ/tVT5zx6yasG', NULL, '404', NULL, NULL, NULL, NULL, '2021-06-06 23:15:27', '2021-06-06 23:15:27'),
-(80, 'bast', 'bast@gmail.com', NULL, '$2y$10$ttrNIx6mVexvkPI9h2c2sOfWJkyatw3a1hfyrKT8gvoben3lhVgb2', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:17:27', '2021-06-06 23:17:27'),
-(81, 'satubast', 'satubast@gmail.com', NULL, '$2y$10$W7UW9m6cXPukEtsTaJcQc.OXSOKwGAhgNBVT/l0g4v6aIv2T8.VFa', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:19:29', '2021-06-06 23:19:29'),
-(82, 'kubin', 'kubin@gmail.com', NULL, '$2y$10$ypBAYFmv7xV0CwpeTdHQsO.5lkRVsegE6luR4WHyoIULVPvpI6KN2', NULL, '1234', NULL, NULL, NULL, NULL, '2021-06-06 23:21:25', '2021-06-06 23:21:25'),
-(83, 'sam', 'sam@gmail.com', NULL, '$2y$10$9JR3hWkefvKSdbMBBYD09O46FMfpocmo6QfHWYCGIHKTKqnKNcwm.', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:22:41', '2021-06-06 23:22:41'),
-(84, 'amanah', 'amanah@gmail.com', NULL, '$2y$10$TIaVamTd2c.1sdvoPpxDle2eIPFUpsK9R6PH0GmKths3T1.FcuuiO', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:23:36', '2021-06-06 23:23:36'),
-(85, 'qwerty', 'qwerty@gmail.com', NULL, '$2y$10$7M.BFm6fF4ywOcd8XTjZsON3Fs5x9q46HKpTelczssUay49DpYwcC', NULL, '12345678', NULL, NULL, NULL, NULL, '2021-06-06 23:32:44', '2021-06-06 23:32:44'),
-(86, 'test123', 'test123@gmail.com', NULL, '$2y$10$in5EmHFVs4pzKpDSUGlyTO6QBnJ6zIDSQql7TvNmzCztmr1e0.x/y', NULL, '1100', NULL, NULL, NULL, NULL, '2021-06-07 22:26:33', '2021-06-07 22:26:33'),
-(87, '12345600', '12345600@gmail.com', NULL, '$2y$10$Bc83eiWyg1D1g5vIKUeI7.KRl9dezYzBeG0XXZ4eUbVhJmdwMrbIm', NULL, '12345600', NULL, NULL, 2, NULL, '2021-06-07 22:35:08', '2021-06-07 22:35:08'),
-(88, 'fidialdiano', 'fidialdiano@gmail.com', NULL, '$2y$10$LLBFKkqdwGEXkm5LNEq0ZOpmRCF9EFek5hA4eB/VkQjzzlwpOTakW', NULL, '12345678', NULL, NULL, 9, NULL, '2021-06-07 23:22:06', '2021-06-07 23:22:06'),
-(89, 'wemby', 'wemby@gmail.com', NULL, '$2y$10$dEHEDtxM7LNNoF0SYayw5OqgBOlcSRKrBJHolAOOe/VNhT4vRqcSC', NULL, '12345671234567', NULL, NULL, 2, 1, '2021-06-08 00:14:51', '2021-06-08 00:14:51'),
-(90, 'endah sri  mulyani gradini', 'esmgradini@gmail.com', NULL, '$2y$10$p9lS4z/cJuA04YySo4.AwejC9qjCK0INYfp3v.c2fF4lthBsC4r1q', NULL, '123', NULL, NULL, 3, NULL, '2021-06-08 00:17:33', '2021-06-08 00:17:33');
+(91, 'beatrix retta', 'bearttcl@gmail.com', NULL, '$2y$10$aGCXsgTEpIPvl9owPVgi6O4PGKRCB6V.jXXkT7toAicV0hIjeqVEe', NULL, '199508222020122009', NULL, NULL, 20, NULL, '2021-06-08 01:40:38', '2021-06-08 01:40:38'),
+(92, 'Muji Waluyo', 'mujiw@gmail.com', NULL, '$2y$10$lsmQFVCznugNKLJ/Qjuk4uySWX7emptyYBvO7Sw.niLyJAW5/kfAm', NULL, '196410311987031000', NULL, NULL, 7, 2, '2021-06-08 10:10:58', '2021-06-08 10:10:58'),
+(93, 'Wahyu Dhimas', 'wahyu_0908@yahoo.com', NULL, '$2y$10$2E7BBVmr.JOsWOQLammWZuIFxsTgQIoVMtEGEXw2z/9eNgwxWo/Ay', NULL, '198210062008051000', NULL, NULL, 20, 3, '2021-06-08 10:13:15', '2021-06-08 10:13:15'),
+(94, 'Marsilah', 'marmarsilah@gmail.com', NULL, '$2y$10$OCXL5gnYeAxzo6oXOD1yUOlFTd7bcm4els9yCTi.7cYwhIr6W626G', NULL, '196406011987032000', NULL, NULL, 23, 3, '2021-06-08 10:14:08', '2021-06-08 10:14:08'),
+(95, 'Sukirman', 'jabat8989@gmail.com', NULL, '$2y$10$pxgSX31HzS7CqfJQFjW/me.1ET5p3gUMPlOihXkiT15Q/E.nlPoQC', NULL, '196310281989031000', NULL, NULL, 20, NULL, '2021-06-08 10:17:06', '2021-06-08 10:17:06'),
+(96, 'Ratna Yunita', 'ratna_yunita78@yahoo.co.id', NULL, '$2y$10$ABl7M.TixyM4dv44R27oeeBqnRe2UV6rEb3.ihQtPv4rjkQz22kF2', NULL, '197802062009042000', NULL, NULL, 20, NULL, '2021-06-08 10:19:36', '2021-06-08 10:19:36'),
+(97, 'Lumaksono Sugiharto', 'lumaksono@gmail.com', NULL, '$2y$10$hDdMeOyHxtLsLGi3ntqiXeXNFSSi0.u37TXGT2Z/O3U3cJ4DAk.x6', NULL, '198105302006041000', NULL, NULL, 20, NULL, '2021-06-08 10:20:56', '2021-06-08 10:20:56'),
+(98, 'Agus Wiguno', 'wiguno_agus@yahoo.co.id', NULL, '$2y$10$OmHa59mitlsMZr1/H9g.CufyZH.d.OpDKFQK5zrciQvxodo7Liuhq', NULL, '198703162019031000', NULL, NULL, 20, NULL, '2021-06-08 10:21:49', '2021-06-08 10:21:49'),
+(99, 'Eka Andi Mardani', 'ekaandi@gmail.com', NULL, '$2y$10$HS9pL5yaxwehd8f5vtKcg.cWcAZH7h.eWvC5hI/zzTR6AHQdsXuw2', NULL, '198710242020121000', NULL, NULL, 20, NULL, '2021-06-08 10:23:15', '2021-06-08 10:23:15'),
+(100, 'Fitri Darmayanti', 'fitrid@gmail.com', NULL, '$2y$10$pkWV81yVsB46hZz5YMhKQO9T06H/dDezf9jRFXwMdAR35E4.j9VBq', NULL, '198909052015032000', NULL, NULL, 20, NULL, '2021-06-08 10:28:43', '2021-06-08 10:28:43'),
+(101, 'Vera Rosmamalini', 'vera.rosmamalini@gmail.com', NULL, '$2y$10$42QpE87kQa5zzVFP5Q2Cv.ufIxFH9.E4ifOTnq2lAQhGFEVrMnXT6', NULL, '10009', NULL, NULL, 20, NULL, '2021-06-08 10:30:07', '2021-06-08 10:30:07'),
+(102, 'A. Adriyanti Akbar', 'aadriyantiakbar@gmail.com', NULL, '$2y$10$TMK.u7UQ5OLDvYPv9wGIXO0sVHsD5KL4pPDyIjAR.GRUUBxYnuxPK', NULL, '198802052011012000', NULL, NULL, 23, NULL, '2021-06-08 10:31:40', '2021-06-08 10:31:40'),
+(103, 'Antonius Adhi Irianto', 'axeldee7@gmail.com', NULL, '$2y$10$cGGWjzvzECKn6Z9UQx4Iw.a.4z3jHLVNpg0ZZBPJIgoQXJkVcddti', NULL, '198405072011011000', NULL, NULL, 23, NULL, '2021-06-08 10:33:24', '2021-06-08 10:33:24'),
+(104, 'Desy Putriani P.', 'putrianidesy@gmail.com', NULL, '$2y$10$5i/hDlvuODAUeXxGCPuZBuWWbFYFQRuEYC9OvTf0KJ2Mvf3icRWdi', NULL, '10001', NULL, NULL, 23, NULL, '2021-06-08 10:34:44', '2021-06-08 10:34:44'),
+(105, 'Safrudin', 'safasafrudin583@gmail.com', NULL, '$2y$10$PNAP5qd5dLhV.WpMOmIOg.88parBRLWAQ.8ZCak/hgUTwR2ShN9oe', NULL, '10006', NULL, NULL, 23, NULL, '2021-06-08 10:35:59', '2021-06-08 10:35:59'),
+(106, 'Lian Ariyanto', 'lianariy46@gmail.com', NULL, '$2y$10$6qyDtyvIznB8K9NV.6WBp.eWE6eQmS4/0bg0r3AMGTxtcwZmzj17.', NULL, '10007', NULL, NULL, 23, NULL, '2021-06-08 10:36:49', '2021-06-08 10:36:49'),
+(107, 'Yudi Cahyadi', 'yudirokap@gmail.com', NULL, '$2y$10$myqDJKY9k.1bpUz2cGgC3u5FSPkLS9DV4IF.zwH6zSBO2xYudexjK', NULL, '197707162006041000', NULL, NULL, 3, 2, '2021-06-08 10:41:07', '2021-06-08 10:41:07'),
+(108, 'Rosfiana', 'rosfiana@gmail.com', NULL, '$2y$10$O4xRgk8f76Olr7s3n3XgVOfbc6MqQx48omCFe0brSKCkZNyMmyy/C', NULL, '196406121987032000', NULL, NULL, 2, 1, '2021-06-08 10:42:03', '2021-06-08 10:42:03'),
+(109, 'Dian Anggraini', 'di4nanggraini10@gmail.com', NULL, '$2y$10$G3sSl5iw9OrROJVdXi8RXeSvZvvV0LBBioQatfOb/HprUmAp3z8Rq', NULL, '197805102006042000', NULL, NULL, 9, NULL, '2021-06-08 10:44:58', '2021-06-08 10:44:58'),
+(110, 'Dimas Aryo Putra', 'vand1m454p@gmail.com', NULL, '$2y$10$Ny9XKNU2CHk1XagOjC0ghumY0pMUGTZpvE1qpFiwaHN7Xn8Qjp3xS', NULL, '198212292009121000', NULL, NULL, 9, 3, '2021-06-08 10:47:16', '2021-06-08 10:47:16'),
+(111, 'FIDYANTO SANDI SAPUTRO', 'fidysandi@gmail.com', NULL, '$2y$10$m3H6qhC.aTRPe9.PRIJChOHRULyqrlZ/AtOJEPrYKYWUkrxYHGk7a', NULL, '198610192008051000', NULL, NULL, 9, NULL, '2021-06-08 10:48:57', '2021-06-08 10:48:57'),
+(112, 'Hendro Prio Sasongko', 'hendrops@gmail.com', NULL, '$2y$10$xn7iZ5LGsDTNSLzakiciHuTC2s3ODhsNC2kG8BJVOKy0qLT0pdGha', NULL, '10011', NULL, NULL, 9, NULL, '2021-06-08 10:50:30', '2021-06-08 10:50:30'),
+(113, 'Arif Setiadi', 'asetiadi.yadi@gmail.com', NULL, '$2y$10$6G6BkHo2xwxFe4LhKhCURekF4JGdtDZldae0sY/5WeC8VlvPwx53m', NULL, '198008072008051001', NULL, NULL, 22, 3, '2021-06-08 10:51:59', '2021-06-08 10:51:59'),
+(114, 'Drajat Prakosa', 'drajatp@gmail.com', NULL, '$2y$10$zi87VeiPZJiAq.re.khnZ.CKZPtptfnhcj3fVlTxDhHFL0i89xNHK', NULL, '198703082015031002', NULL, NULL, 22, NULL, '2021-06-08 22:44:20', '2021-06-08 22:44:20'),
+(115, 'Redimel Vischo', 'redimelvischo@gmail.com', NULL, '$2y$10$VclVGdZEDuwq4ptJeWSODOJrPaIyNBxPMLwufpiokwE0kLq4RL8F.', NULL, '10008', NULL, NULL, 22, NULL, '2021-06-08 22:45:30', '2021-06-08 22:45:30'),
+(116, 'M. SAM UMAR W.', 'sam.wiraharja@gmail.com', NULL, '$2y$10$QHvJNmEvNdwXF1Rao6fl0ekf7lPvdip6LqQD.WegoWFNnu4GB7II6', NULL, '198303242011011000', NULL, NULL, 8, 3, '2021-06-08 22:46:48', '2021-06-08 22:46:48'),
+(117, 'ENDANG SETYO HARTANTI', 'endang0302@gmail.com', NULL, '$2y$10$3ZiRZ3yB0yA6q8obrWHFnuvRiMxI89Igt1Z17Ik4.6mtr3RrBUFuy', NULL, '197802032011012000', NULL, NULL, 8, NULL, '2021-06-08 22:48:09', '2021-06-08 22:48:09'),
+(118, 'Kukuh Binanto', 'kukuhbinanto@gmail.com', NULL, '$2y$10$Ki.LTmlgWxIeT91CPXapheYkqQ2WGEZ0cxUf9uX2X4wA2Wr/gQIA2', NULL, '199401242019031000', NULL, NULL, 8, NULL, '2021-06-08 22:49:33', '2021-06-08 22:49:33'),
+(119, 'Yunita', 'yunita170593@gmail.com', NULL, '$2y$10$OstvkAJo2oEhXEDWzMyg4eRvAQRGnzM8US0BGo9j6YhvAUz0De.gy', NULL, '10004', NULL, NULL, 8, NULL, '2021-06-08 22:50:18', '2021-06-08 22:50:18'),
+(120, 'Fany Widia', 'fany.pria@gmail.com', NULL, '$2y$10$RnBmrJjy.Z3mN.uRX75X8.dvbNL6K1WXfuo1UNOlEFioYCXFF3ylS', NULL, '197202042002121000', NULL, NULL, 6, 2, '2021-06-09 01:30:35', '2021-06-09 01:30:35'),
+(121, 'Arif Hidayat', 'rifaya75@gmail.com', NULL, '$2y$10$r50MoIV0r6/J9sNQYH28oeoufUoDLM1X8Ec4oC3BZXlbHrgkZJ/Cu', NULL, '197505072009121000', NULL, NULL, 24, 3, '2021-06-09 01:53:06', '2021-06-09 01:53:06'),
+(122, 'Devi Amelia', 'deviamelia84@ymail.com', NULL, '$2y$10$j8KRcTQSO73WoErFQCRT2OAKi2ZUEYS3D/zm39fd8OxYC6ayO4Hu6', NULL, '198406072008052000', NULL, NULL, 24, NULL, '2021-06-09 01:54:27', '2021-06-09 01:54:27'),
+(123, 'Slamet Riyadi', 'slametriyadi6889@gmail.com', NULL, '$2y$10$Sh3/6leVouw9VeqaIyAXZuahbDTM4744w58f1M1SCILAppyww8LWm', NULL, '196801011989031003', NULL, NULL, 14, 3, '2021-06-09 01:57:15', '2021-06-09 01:57:15'),
+(124, 'Heni Lestari', 'henilestari.mari@gmail.com', NULL, '$2y$10$hPuFBdvpMXAMIBSxZyKBRu7DlotrMkk5JaftRYebpfpIA5FTm.0Z2', NULL, '197204121999032000', NULL, NULL, 14, NULL, '2021-06-09 01:58:48', '2021-06-09 01:58:48'),
+(125, 'Isrul', 'isrul.sulaeman@gmail.com', NULL, '$2y$10$fMJJ4WNHdkBsRYAth2h28OghTO8gFkNWgAGEgT1ryL.PZ0kE/uAd6', NULL, '197002141999031000', NULL, NULL, 16, 3, '2021-06-09 02:00:09', '2021-06-09 02:00:09'),
+(127, 'Nur Rahmat Baskara', 'bugs.bagas@gmail.com', NULL, '$2y$10$4.y6tACBphc6CNvBYxIt0eKhtQqbOQnO2zuQOwNSArHzui4uPLW8.', NULL, '198011022009121000', NULL, NULL, 16, NULL, '2021-06-09 02:10:37', '2021-06-09 02:10:37'),
+(128, 'Supriyadi Gunawan', 'supriyadigunawan@gmail.com', NULL, '$2y$10$vQWtjpgOmPZDp6DO5LK.C.sSTU/F47lXagXXXVnNOhxL2NVLmilP.', NULL, '197009121990031000', NULL, NULL, 5, 2, '2021-06-09 02:12:06', '2021-06-09 02:12:06'),
+(129, 'Dhonik Boedy Agus', 'dhonikb@gmail.com', NULL, '$2y$10$q.P515CapRSYY0Mcn.g4mOXeaxi4AvW8tHJcDMoyWxDGev89mTJVa', NULL, '196508151989031000', NULL, NULL, 13, 3, '2021-06-09 02:13:36', '2021-06-09 02:13:36'),
+(130, 'Falcon Sihombing', 'falcon_sihombing@yahoo.co.id', NULL, '$2y$10$2aygSL3DolIO/Hgcnv8yfet4I0qIQHmx/VrlTGFManpPWxp3u0vWK', NULL, '198003242007041000', NULL, NULL, 13, NULL, '2021-06-09 02:15:28', '2021-06-09 02:15:28'),
+(131, 'Purwanto', 'purwanto.ma1963@gmail.com', NULL, '$2y$10$7JsjVF6MrK191IxDKV9w3uDOyTYmtHVCUZk14BwKFNACE.47vFWoC', NULL, '196306141986031000', NULL, NULL, 13, NULL, '2021-06-09 02:16:43', '2021-06-09 02:16:43'),
+(132, 'Fairuz Lazwardi', 'lazwardi2000@gmail.com', NULL, '$2y$10$8/UYxCpBUwogV.DH4CdaWu4tZCwc8hFlrYHp.QFKa4d3OC.MOcuAe', NULL, '198201182009041000', NULL, NULL, 18, 3, '2021-06-09 02:17:43', '2021-06-09 02:17:43'),
+(133, 'Wahyudin', 'wahyudin_wahyu83@yahoo.co.id', NULL, '$2y$10$eoPlEEsnMkYoXRI6uExZB.lOjqzJg2jMsnNHtKBVb7NxMKtG5IY5.', NULL, '10010', NULL, NULL, 18, NULL, '2021-06-09 02:19:50', '2021-06-09 02:19:50'),
+(134, 'Eko Prihanto', 'ziogos210905@gmail.com', NULL, '$2y$10$tiJb1Ia3jprRqbim63.G4.gNLWJ4b9MSzYSyobJjIqz1jyLhzQVJe', NULL, '198412282005021000', NULL, NULL, 19, 3, '2021-06-09 02:21:02', '2021-06-09 02:21:02'),
+(135, 'David Achmad Wijaya', 'vidski23@me.com', NULL, '$2y$10$KFfxTD8hOE2Gh3TjwYBBCOpW9znK5hVkJ7W85lBLtJ2yrRoYUIAAW', NULL, '198603022008052000', NULL, NULL, 19, NULL, '2021-06-09 02:22:28', '2021-06-09 02:22:28'),
+(136, 'Irwansyah', 'irwansyah@gmail.com', NULL, '$2y$10$h65CBvFW9kNxm3M2CsD1vOG2vfFMInQu.r9qEQIOgS.42zgB0a7SW', NULL, '196804291988031000', NULL, NULL, 4, 2, '2021-06-09 11:46:56', '2021-06-09 11:46:56'),
+(137, 'H. MUHAMMAD ARIEF', 'fauziemarief@gmail.com', NULL, '$2y$10$gbMXzr59jtWbu7E79ZEb2.h0N/TaRpnvSlvGgG2rFlOG5I3wCTP6O', NULL, '196406141991031000', NULL, NULL, 12, 3, '2021-06-09 11:48:54', '2021-06-09 11:48:54'),
+(138, 'Andi Nurhasbi', 'andinurhasbi@gmail.com', NULL, '$2y$10$w1tREy5tGanwrCdi3mj5SON7VsP8KdLEC8ZsqTZmXmHuhBKCfyrDy', NULL, '198404262009041000', NULL, NULL, 12, NULL, '2021-06-09 11:50:13', '2021-06-09 11:50:13'),
+(139, 'BUDI HENDRASTI', 'bhendrasti@gmail.com', NULL, '$2y$10$6yxsaks4ivyPjf8IXfCCg.v3aq4yQVwCM0WXaLgDbr.CrhUquooGS', NULL, '196708011994032000', NULL, NULL, 11, 3, '2021-06-09 11:51:49', '2021-06-09 11:51:49'),
+(140, 'Ulfah Apriyani', 'ulfaha@gmail.com', NULL, '$2y$10$gLpDu7n7FsT2JweD59X4D.HiwGYPOwlY8kjONDNxHZ3fE1mOte3uu', NULL, '198603222011012000', NULL, NULL, 11, NULL, '2021-06-09 11:53:05', '2021-06-09 11:53:05'),
+(141, 'AHMAD FAUZI IBRAHIM', 'halo.fauzi@gmail.com', NULL, '$2y$10$CywdbBJ86jtMkp4lhxKwB.NgLrS3mzXIqrNCihcIoLre.UJgdCfZ2', NULL, '10003', NULL, NULL, 11, NULL, '2021-06-09 11:54:08', '2021-06-09 11:54:08'),
+(142, 'Adi Mardiansyah', 'adi.mardiansyah@mahkamahagung.go.id', NULL, '$2y$10$23.ZZU6Wx0rPQgcTbpXwQO2dcvK8IziBWcgkfeCST1OQQwhk2e8Xi', NULL, '198803252011011000', NULL, NULL, 10, 3, '2021-06-09 11:55:02', '2021-06-09 11:55:02'),
+(143, 'Anisa Dwi Yunianti', 'anisa.dwiyunianti@gmail.com', NULL, '$2y$10$4zoKlzhxESblYgTPKyMW2.BPhfwjxlxcQPEnSzfTg82WTJ3wjSI2a', NULL, '199706192020122000', NULL, NULL, 10, NULL, '2021-06-09 11:56:50', '2021-06-09 11:56:50'),
+(144, 'SILVANI ELSA FITRIANA', 'silvani.fitriana@gmail.com', NULL, '$2y$10$6.hTggL0Mg9ze7TdblY0duY/6lfRsxxUgL0yBVYA5ZB7/CniWDxGO', NULL, '199007072019032000', NULL, NULL, 10, NULL, '2021-06-09 11:57:51', '2021-06-09 11:57:51'),
+(145, 'RINA LASTRIANA', 'rina.lastriana1@gmail.com', NULL, '$2y$10$leTUxWhvItOcCtP55tyr5eqyX/aa2cWyt5xawfEm/cV4zrq/kOJPa', NULL, '10005', NULL, NULL, 12, NULL, '2021-06-09 11:59:53', '2021-06-09 11:59:53'),
+(146, 'M. SYAHNAN IRAWAN', 'syahnanirawan86@gmail.com', NULL, '$2y$10$IGHraUeNG6dtRrUD12wbvu3VfNSzDamvvEoEm6EY0zSzU23x.Xt6C', NULL, '10002', NULL, NULL, 10, NULL, '2021-06-09 12:01:05', '2021-06-09 12:01:05');
 
 -- --------------------------------------------------------
 
@@ -6406,7 +6437,7 @@ ALTER TABLE `trans_tembusan_surat`
 -- AUTO_INCREMENT for table `tref_arahan_surat`
 --
 ALTER TABLE `tref_arahan_surat`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tref_asal_ekspedisi_surat_masuk`
@@ -6472,7 +6503,7 @@ ALTER TABLE `tref_unit`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `users_asli`
