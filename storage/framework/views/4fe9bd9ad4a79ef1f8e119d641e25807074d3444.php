@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\surat\resources\views\pdf\memo.blade.php ENDPATH**/ ?>
