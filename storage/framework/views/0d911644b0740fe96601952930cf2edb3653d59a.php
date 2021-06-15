@@ -96,7 +96,9 @@ unset($__errorArgs, $__bag); ?>
                 <!-- /.col -->
             </div>
         </form>
-        
+        <p class="mb-0">
+            <a href="<?php echo e(route('register')); ?>" class="text-center">Buat Akun Baru</a>
+        </p>
 
     </div>
     <!-- /.login-card-body -->

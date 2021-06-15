@@ -36,7 +36,7 @@ Route::post('/profile', 'UserController@postProfile')->name('user.postProfile');
 Route::get('/password/change', 'UserController@getPassword')->name('userGetPassword');
 Route::post('/password/change', 'UserController@postPassword')->name('userPostPassword');
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 //////////////////////////////// axios request
 

@@ -131,10 +131,10 @@ class SuratMasukController extends SuratController
      */
     public static function kirimSurat(Request $request)
     {
-        $ceklistArahanSurat = 11; // Bu titi
+        $ceklistArahanSurat = 40; //  id user temporary untuk menyimpan semua data
 
         // Update current mailbox from draft (1) to sent (2)
-        $mailbox = Mailbox::find(request('id_mailbox'));//dd($mailbox);
+        $mailbox = Mailbox::find(request('id_mailbox')); //dd($mailbox);
         $mailbox->id_status_mailbox    = 2;                                 // 2: Sent
         $mailbox->ceklist_arahan_surat = $ceklistArahanSurat;               // Id User yang mau dikirim
         $mailbox->waktu_kirim          = Mailbox::raw('CURRENT_TIMESTAMP'); // Waktu pengiriman
@@ -143,7 +143,7 @@ class SuratMasukController extends SuratController
         $arrArahanSurats = explode(',', $ceklistArahanSurat);
 
         foreach ($arrArahanSurats as $arrArahanSurat) {
-        // Insert new mailbox record for recepient
+            // Insert new mailbox record for recepient
             Mailbox::Insert([
                 'id_user'                 => $arrArahanSurat,
                 'id_parent_mailbox'       => $mailbox->id,
@@ -163,10 +163,10 @@ class SuratMasukController extends SuratController
         }
 
         return response()->json([
-                'success'        => true,
-                'surat_masuk_id' => request('surat_masuk_id'),
-                'mailbox_id'     => request('mailbox_id')
-            ]);
+            'success'        => true,
+            'surat_masuk_id' => request('surat_masuk_id'),
+            'mailbox_id'     => request('mailbox_id')
+        ]);
     }
 
     /**

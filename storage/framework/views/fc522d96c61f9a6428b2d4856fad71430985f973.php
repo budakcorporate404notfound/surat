@@ -1,17 +1,17 @@
 <div id="surat-file-surat-keluar-data-table-pos">
     <div id="surat-file-surat-keluar-data-block">
         <div class="row mb-3">
-            <div class="col-md-6" id="card_title">{{ Form::label('file_bahan_kerja') }}</div>
+            <div class="col-md-6" id="card_title"><?php echo e(Form::label('file_bahan_kerja')); ?></div>
             <div class="col-md-6 text-right">
                 <a class="btn btn-outline-success" href="javascript:void(0)" id="surat-file-surat-keluar-create-new"><i class="fas fa-plus-circle"></i>  Tambah file bahan kerja</a>
             </div>
         </div>
         <div class="card">
-            @if ($message = Session::get('success'))
+            <?php if($message = Session::get('success')): ?>
             <div class="alert alert-success">
-                <p>{{ $message }}</p>
+                <p><?php echo e($message); ?></p>
             </div>
-            @endif
+            <?php endif; ?>
             <div class="card-body col-md-12">
                 <div class="table-responsive">
                     <table class="table table-bordered data-table dt-responsive nowrap" id="surat-file-surat-keluar-data-table" width="100%">
@@ -29,7 +29,7 @@
         </div>
     </div>
 </div>
-@push('modal')
+<?php $__env->startPush('modal'); ?>
 <div class="modal fade" id="surat-file-surat-keluar-ajax-modal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -42,9 +42,11 @@
             <div class="modal-body">
                 <div id="surat-file-surat-keluar-pdf" style="height: 30rem; border: 1rem solid rgba(0,0,0,.1)"></div>
                 <form id="surat-file-surat-keluar-form" name="surat-file-surat-keluar-form"  method="POST"  role="form" enctype="multipart/form-data" class="dropzone">
-                    @csrf
-                    {!! Form::hidden('id', '', ['id'=>'surat-file-surat-keluar-id']) !!}
-                    {!! Form::hidden('id_surat_masuk', '', ['id'=>'surat-file-surat-keluar-id_surat_masuk']) !!}
+                    <?php echo csrf_field(); ?>
+                    <?php echo Form::hidden('id', '', ['id'=>'surat-file-surat-keluar-id']); ?>
+
+                    <?php echo Form::hidden('id_surat_masuk', '', ['id'=>'surat-file-surat-keluar-id_surat_masuk']); ?>
+
                 </form>
             </div>
             <div class="modal-footer">
@@ -58,8 +60,8 @@
 <style>
 #surat-file-surat-keluar-data-table thead {display: none;}
 </style>
-@endpush
-@push('js_script')
+<?php $__env->stopPush(); ?>
+<?php $__env->startPush('js_script'); ?>
 <script type="text/javascript">
 $(function () {
     $.ajaxSetup({
@@ -75,7 +77,7 @@ $(function () {
         paging: false,
         searching: false,
         info: false,
-        ajax: "{{ route('file_tanggapan.index') }}",
+        ajax: "<?php echo e(route('file_tanggapan.index')); ?>",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {
@@ -86,7 +88,7 @@ $(function () {
                     if (ext == 'png' || ext == 'jpg' || ext == 'jpeg' || ext == 'gif' || ext == 'pdf') {
                         link = `<div><a href="javascript:void(0)" data-toggle="tooltip"  data-id="${data.id}" file-name="${data.storage_file_name}" data-original-title="Edit" class="edit surat-file-surat-keluar-edit">${data.file_tanggapan}</a></div>`;
                     } else {
-                        link = `<div><a href="{{ url("/uploads") }}/${data.storage_file_name}" target="_blank">${data.file_tanggapan}</a></div>`;
+                        link = `<div><a href="<?php echo e(url("/uploads")); ?>/${data.storage_file_name}" target="_blank">${data.file_tanggapan}</a></div>`;
                     }
 
                     return `<div class="d-flex">${link}
@@ -113,8 +115,8 @@ $(function () {
 
     $('body').on('click', '.surat-file-surat-keluar-edit', function () {
         var surat_file_tanggapan_id = $(this).data('id');
-        var fileURL = '{{ url('/') }}/uploads/' + $(this).attr("file-name");
-        $.get('{{ route('file_tanggapan.index') }}' + '/' + surat_file_tanggapan_id  + '/edit', function (data) {
+        var fileURL = '<?php echo e(url('/')); ?>/uploads/' + $(this).attr("file-name");
+        $.get('<?php echo e(route('file_tanggapan.index')); ?>' + '/' + surat_file_tanggapan_id  + '/edit', function (data) {
             reset_form_data('#surat-file-surat-keluar-form');
             $('#surat-file-surat-keluar-model-heading').html("Ubah lampiran tanggapan surat");
             $('#surat-file-surat-keluar-save-btn').val("Simpan lampiran tanggapan surat");
@@ -138,9 +140,9 @@ $(function () {
         if(result){
             $.ajax({
                 type: "DELETE",
-                url: '{{ route('file_tanggapan.store') }}' + '/' + surat_file_tanggapan_id,
+                url: '<?php echo e(route('file_tanggapan.store')); ?>' + '/' + surat_file_tanggapan_id,
                 success: function (data) {
-                    surat_file_tanggapan_table.ajax.url( '{{ route( 'file_tanggapan.index' ) }}?id_surat_masuk=' + surat_masuk_id ).load();
+                    surat_file_tanggapan_table.ajax.url( '<?php echo e(route( 'file_tanggapan.index' )); ?>?id_surat_masuk=' + surat_masuk_id ).load();
                 },
                 error: function (data) {
                     console.log('Error:', data);
@@ -152,14 +154,14 @@ $(function () {
     });
 
     surat_file_tanggapan_table_reload = function(){
-        surat_file_tanggapan_table.ajax.url( '{{ route( 'file_tanggapan.index' ) }}?id_surat_masuk=' + surat_masuk_id ).load();
+        surat_file_tanggapan_table.ajax.url( '<?php echo e(route( 'file_tanggapan.index' )); ?>?id_surat_masuk=' + surat_masuk_id ).load();
     }
 });
 
 Dropzone.autoDiscover = false;
 
 var file_tanggapan_dropzone = new Dropzone("#surat-file-surat-keluar-form", {
-    url: "{{ route('file_tanggapan.store') }}",
+    url: "<?php echo e(route('file_tanggapan.store')); ?>",
     maxFilesize: 10,
     success: function (file, response) {
         var ext = getFileExt(file.name);
@@ -170,7 +172,7 @@ var file_tanggapan_dropzone = new Dropzone("#surat-file-surat-keluar-form", {
         }
         this.createThumbnailFromUrl(file, newImagePath);
 
-        var fileURL = '{{ url('/') }}/uploads/' + response.file;
+        var fileURL = '<?php echo e(url('/')); ?>/uploads/' + response.file;
         if ( fileURL.slice(-3) == 'pdf' ) {
             var options = {pdfOpenParams: {navpanes: 1, toolbar: 1, statusbar: 1, view: "FitV"}};
             var myPDF = PDFObject.embed(fileURL, "#surat-file-surat-keluar-pdf", options);
@@ -186,4 +188,5 @@ var file_tanggapan_dropzone = new Dropzone("#surat-file-surat-keluar-form", {
 });
 
 </script>
-@endpush
+<?php $__env->stopPush(); ?>
+<?php /**PATH C:\xampp\htdocs\surat\resources\views/surat/file-surat-keluar/index.blade.php ENDPATH**/ ?>
