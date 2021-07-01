@@ -19,9 +19,9 @@
                 <div>
                     Posisi dan durasi proses:
                     <ul class="step d-flex flex-nowrap" id="surat-disposisi-surat-step-diagram">
-                        <li class="step-item"><a href="#!" class="">TU</a><br><span class="font-weight-lighter process-time">13 jam</span></li>
-                        <li class="step-item"><a href="#!" class="">Karo</a><br><span class="font-weight-lighter process-time">45 menit</span></li>
-                        <li class="step-item active"><a href="#!" class="">Kabag</a><br><span class="font-weight-lighter process-time">2 hari 3 jam 45 menit</span></li>
+                        <li class="step-item"><a href="#!" class="">TU</a></li>
+                        <li class="step-item"><a href="#!" class="">Karo</a></li>
+                        <li class="step-item"><a href="#!" class="">Kabag</a></li>
                         <li class="step-item"><a href="#!" class="">Kasubag</a></li>
                         <li class="step-item"><a href="#!" class="">Pelaksana</a></li>
                     </ul>

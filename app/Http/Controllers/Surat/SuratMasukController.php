@@ -131,7 +131,7 @@ class SuratMasukController extends SuratController
      */
     public static function kirimSurat(Request $request)
     {
-        $ceklistArahanSurat = 40; //  id user temporary untuk menyimpan semua data
+        $ceklistArahanSurat = 1; //  id user temporary untuk menyimpan semua data
 
         // Update current mailbox from draft (1) to sent (2)
         $mailbox = Mailbox::find(request('id_mailbox')); //dd($mailbox);

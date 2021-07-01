@@ -3,7 +3,7 @@
         <div class="row mb-3">
             <div class="col-md-6" id="card_title">{{ Form::label('file_bahan_kerja') }}</div>
             <div class="col-md-6 text-right">
-                <a class="btn btn-outline-success" href="javascript:void(0)" id="surat-file-surat-keluar-create-new"><i class="fas fa-plus-circle"></i>  Tambah file bahan kerja</a>
+                <a class="btn btn-outline-success" href="javascript:void(0)" id="surat-file-surat-keluar-create-new"><i class="fas fa-plus-circle"></i>  Tambah file tanggapan surat</a>
             </div>
         </div>
         <div class="card">
